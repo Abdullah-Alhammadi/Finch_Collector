@@ -19,12 +19,13 @@
           {% else %}
           <img src="{% static 'images/default-finch.svg' %}" alt="Give the finch image" class="usr-img" />
           {% endif %}
+          <div class="finch-actions">
+            <a href="{% url 'finch-update' finch.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'finch-delete' finch.id %}" class="btn danger">Delete</a>
+          </div>
         </div>
       </section>
-      <div class="finch-actions">
-        <a href="{% url 'finch-update' finch.id %}" class="btn warn">Edit</a>
-        <a href="{% url 'finch-delete' finch.id %}" class="btn danger">Delete</a>
-      </div>
+      
     </div>
     <div>
       <h1>{{ finch.name }}</h1>
