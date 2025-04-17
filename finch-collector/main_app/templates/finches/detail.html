@@ -19,10 +19,12 @@
           {% else %}
           <img src="{% static 'images/default-finch.svg' %}" alt="Give the finch image" class="usr-img" />
           {% endif %}
-          <div class="finch-actions">
-            <a href="{% url 'finch-update' finch.id %}" class="btn warn">Edit</a>
-            <a href="{% url 'finch-delete' finch.id %}" class="btn danger">Delete</a>
-          </div>
+          <h3>Change {{ finch.name }}'s photo</h3>
+          <form action="{% url 'add-photo' finch.id %}" method="POST" class="subsection-content" autocomplete="off">
+            {% csrf_token %}
+            {{ photo_form.as_p }}
+            <button type="submit" class="btn submit">Add Photo</button>
+          </form>
         </div>
       </section>
       
@@ -37,13 +39,12 @@
       {% endif %}
 
       <p>{{ finch.description }}</p>
+      <div class="finch-actions">
+        <a href="{% url 'finch-update' finch.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'finch-delete' finch.id %}" class="btn danger">Delete</a>
+      </div>
 
-      <h3>Change {{ finch.name }}'s photo</h3>
-      <form action="{% url 'add-photo' finch.id %}" method="POST" class="subsection-content" autocomplete="off">
-        {% csrf_token %}
-        {{ photo_form.as_p }}
-        <button type="submit" class="btn submit">Add Photo</button>
-      </form>
+     
     </div>
   </div>
   <div class="horizontal">
