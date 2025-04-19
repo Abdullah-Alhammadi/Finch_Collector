@@ -8,19 +8,7 @@ html {
 
 :root {
   font-size: 62.5%;
-}
 
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  min-height: 100vh;
-
-  /* Theme variables */
   --nav-bg: rgba(104, 197, 248, 0.7);
   --nav-bg-ff: rgba(104, 197, 248, 0.9);
   --borders: rgb(36, 116, 248) solid 2px;
@@ -41,7 +29,20 @@ body {
   --card-border-radius: 6px;
 }
 
-/* ===================== Header ===================== */
+body {
+  margin: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+/* ========== Header ========== */
 
 header {
   width: 100%;
@@ -62,6 +63,13 @@ header {
 
 .header-logo-container {
   max-width: 150px;
+  background-color: var(--nav-bg-ff);
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .header-logo-container img {
@@ -70,7 +78,7 @@ header {
   display: block;
 }
 
-/* ===================== Navigation ===================== */
+/* ========== Navigation ========== */
 
 nav ul {
   margin: 0;
@@ -97,7 +105,7 @@ nav li {
   padding: 5px 8px;
 }
 
-/* ===================== Main ===================== */
+/* ========== Main ========== */
 
 main {
   width: 100%;
@@ -109,20 +117,18 @@ h2 {
   font-size: var(--font-xl);
 }
 
-/* ===================== Buttons ===================== */
+/* ========== Buttons ========== */
 
 .btn {
   font-size: var(--font-l);
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
-  border-width: 2px;
-  border-style: solid;
-  text-decoration: none;
+  border: 2px solid transparent;
   background-color: var(--button-bg);
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
+  transition: background-color 0.2s ease;
 }
 
 .btn:hover {
@@ -149,7 +155,7 @@ h2 {
   border-color: var(--danger);
 }
 
-/* ===================== Page Header ===================== */
+/* ========== Page Header ========== */
 
 .page-header {
   display: flex;
@@ -171,7 +177,8 @@ h2 {
   font-size: var(--font-reg);
 }
 
-/* ===================== Media Queries ===================== */
+/* ========== Logout Button ========== */
+
 #logout-form button {
   text-decoration: none;
   color: var(--text-color);
@@ -187,6 +194,8 @@ h2 {
 #logout-form button:hover {
   color: var(--link-hover-color);
 }
+
+/* ========== Media Queries ========== */
 
 @media only screen and (min-width: 768px) {
   header {
@@ -223,57 +232,18 @@ h2 {
   }
 
   .header-content {
-    background: var(--nav-bg-ff);
+    background: rgba(104, 197, 248, 0.6);
     border: var(--borders);
     border-radius: 18px;
     padding: 10px 20px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
-
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .header-content {
-      background: rgba(104, 197, 248, 0.6);
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
-    }
-  }
-}.header-logo-container {
-  background-color: var(--nav-bg-ff);
-  padding: 8px 12px;
-  border-radius: 12px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 256px;
-  height: 100%;
 }
 
-.header-logo-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-
+/* ========== Home Page ========== */
 
 .home-container {
   text-align: center;
   margin-top: 60px;
 }
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #0077cc; 
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #005fa3;
-}
-
-

@@ -1,173 +1,163 @@
-/* General container for finch details */
-.finch-container {
-  padding: 35px 30px;
+/* ========== Wrapper ========== */
+.finch-detail-wrapper {
+  padding: 20px;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+/* ========== Layout ========== */
+.finch-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.finch-detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 35px 30px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: var(--card-box-shadow);
 }
 
-.horizontal {
-  display: flex;
-  align-items: flex;
-}
-
-.finch-img {
-  width: 20%;
-  max-width: 30px;
-  margin-bottom: 10px;
-}
-
-.finch-details {
-  width: 98%;
+/* ========== Image + Photo Form Section ========== */
+.finch-img-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  width: 280px;
+  margin: auto;
 }
 
+.finch-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.finch-change-photo-title {
+  font-size: var(--font-l);
+  color: var(--text-color);
+  text-align: center;
+  margin: 10px 0 5px;
+}
+
+.finch-photo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.finch-photo-form input,
+.finch-photo-form select {
+  width: 100%;
+  max-width: 280px;
+  padding: 6px 12px;
+  font-size: var(--font-l);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.finch-photo-form button {
+  margin-top: 10px;
+}
+
+/* ========== Titles and Description ========== */
+.finch-detail-wrapper h1 {
+  font-size: var(--font-xxl);
+  margin: 15px 0 3px;
+}
+
+.finch-detail-wrapper h2 {
+  font-size: var(--font-xl);
+  margin: 0 0 10px;
+}
+
+.finch-detail-wrapper h3 {
+  font-size: var(--font-l);
+  margin: 20px 0 10px;
+}
+
+.finch-detail-wrapper p {
+  font-size: var(--font-reg);
+  margin: 5px 0;
+}
+
+/* ========== Actions ========== */
 .finch-actions {
   margin-top: 20px;
+  display: flex;
+  gap: 10px;
 }
 
-.feedings-toy-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
-    align-items: center;
+/* ========== Feedings + Toys Layout ========== */
+.finch-sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
 }
 
-/* Section title and content layout */
-.subsection-title {
+.finch-feedings,
+.finch-toys {
+  width: 100%;
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 16px;
+  border: var(--borders);
+  box-shadow: var(--card-box-shadow);
+}
+
+/* ========== Subsection Titles ========== */
+.finch-subsection-title {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.subsection-content {
+.finch-subsection-title h2 {
+  font-size: 2.6rem;
+  color: var(--primary-dark);
+}
+
+/* ========== Subsection Content ========== */
+.finch-subsection-content {
   margin: 0 8px;
 }
 
-/* Flexbox for feedings and toys sections */
-.toy-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-
-
-.color-block {
-  opacity: 0.8;
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
-}
-
-/* Text styles for feeding and toy status */
-.unfed,
-.fed,
-.no-toys,
-.all-toys {
-  margin: 0;
-  font-weight: bold;
-}
-
-.unfed,
-.no-toys {
-  color: var(--danger);
-}
-
-.fed,
-.all-toys {
-  color: var(--submit);
-}
-
-/* Finch details text styles */
-.finch-details h1 {
-  font-size: var(--font-xxl);
-  margin: 15px 0 3px;
-}
-
-.finch-details h2 {
-  font-size: var(--font-xl);
-  margin: 0 0 10px;
-}
-
-.finch-details h3 {
-  margin: 20px 0 10px;
-  font-size: var(--font-l);
-}
-
-.finch-details p {
-  font-size: var(--font-reg);
-  margin: 5px 0;
-}
-
-/* Feedings section styles */
-.feedings {
-  background-color: #fffefb;
-  border-left: 5px solid var(--primary);
-  transition: all 0.3s ease-in-out;
-}
-
-.feedings-toy-container > section {
-  width: 80%;
-  min-width: 360px;
-  border: var(--borders);
-  border-radius: var(--card-border-radius);
-  padding: 10px;
-  box-shadow: var(--card-box-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.feedings h2,
-.toys h2 {
-  font-size: 2.6rem;
-  color: var(--primary-dark);
-  margin: 0 0 8px;
-}
-
-.feedings h3,
-.toys h3 {
-  font-size: var(--font-xl);
-  margin: 10px 0;
-}
-
-/* Feeding form */
-.feedings form {
+.finch-subsection-content form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 10px 8px;
+  margin-top: 10px;
 }
 
-.feedings .btn.submit {
-  align-self: flex-start;
-  margin-top: 5px;
-  background-color: var(--submit);
-  color: white;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: var(--btn-border-radius);
-}
-
-.subsection-content p,
-.subsection-content input,
-.subsection-content select {
+.finch-subsection-content input,
+.finch-subsection-content select {
   font-size: var(--font-l);
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.subsection-content input,
-.subsection-content select {
-  margin-left: 5px;
-  padding: 3px;
+.finch-subsection-content button {
+  margin-top: 10px;
 }
 
-/* Feeding status messages */
-.fed,
-.unfed {
+/* ========== Feeding Status ========== */
+.finch-fed,
+.finch-unfed {
   padding: 10px 15px;
   border-radius: 6px;
   font-size: var(--font-reg);
@@ -175,140 +165,124 @@
   width: fit-content;
 }
 
-.fed {
+.finch-fed {
   background-color: #e6ffed;
   color: #1d7c3b;
   border: 1px solid #a5dfb0;
 }
 
-.unfed {
+.finch-unfed {
   background-color: #fff0f0;
   color: #cf2c2c;
   border: 1px solid #f5a6a6;
 }
 
-/* Feeding Table */
-.feedings table {
-  width: calc(100% - 16px);
-  text-align: left;
+/* ========== Feeding Table ========== */
+.finch-subsection-content table {
+  width: 100%;
   border-collapse: collapse;
-  margin: 15px 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
+  margin-top: 15px;
 }
 
-.feedings td,
-.feedings th {
+.finch-subsection-content th,
+.finch-subsection-content td {
   padding: 10px;
   font-size: var(--font-reg);
   border-bottom: 1px solid #ddd;
 }
 
-.feedings th {
-  font-size: var(--font-l);
+.finch-subsection-content th {
   font-weight: bold;
   background-color: var(--primary-light);
-  color: #111;
   text-transform: uppercase;
 }
 
-.feedings tr:last-child td {
-  border-bottom: none;
-}
-
-.feedings tr:nth-child(even) {
-  background-color: #f3f3fd;
-}
-
-.feedings tr:hover {
-  background-color: #f9f9f9;
-}
-
-/* Toy container styles */
-.toy-container p {
-  margin: 12px 0;
-}
-
-.toy-container a {
-  text-decoration: none;
-  color: #111;
-}
-
-.toy-container .btn {
-  padding: 3px 10px;
-  margin-left: 10px;
-}
-
-/* File input styling */
-#file-input {
-  overflow: hidden;
-  position: absolute;
-  width: 0.1px;
-  height: 0.1px;
-}
-
-#file-name {
+/* ========== Toy Block ========== */
+.finch-toy-block {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 10px;
 }
 
-/* Clickable image hover effect */
-.clickable-image {
+.finch-color-block {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #888;
+  margin-right: 12px;
+}
+
+.finch-toy-block form {
+  margin-left: auto;
+}
+
+.finch-toy-block .btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
   cursor: pointer;
-  display: inline-block;
 }
 
-.clickable-image img {
-  width: 60px;
-  margin: 0 5px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.finch-toy-block .submit {
+  background-color: var(--submit);
+  color: white;
 }
 
-.clickable-image img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+.finch-toy-block .danger {
+  background-color: var(--danger);
+  color: white;
 }
 
-/* Media Queries for responsive design */
+/* ========== Responsive Design ========== */
 @media only screen and (min-width: 768px) {
-  .finch-container {
-    padding: 35px 30px;
+  .finch-detail-container {
     flex-direction: row;
-    align-items: center;
     justify-content: start;
-  }
-
-  .finch-img {
-    width: 25%;
-    max-width: 250px;
-    margin-right: 25px;
-  }
-
-  .feedings-toy-container {
-    flex-direction: row;
-    justify-content: space-around;
     align-items: flex-start;
+    gap: 30px;
   }
 
-  .feedings-toy-container > section {
-    width: 45%;
+  .finch-sections-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
   }
-}
 
-@media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
-    padding: 0 40px;
+  .finch-feedings,
+  .finch-toys {
+    width: 48%;
   }
 }
 
 @media (max-width: 500px) {
-  .feedings table,
-  .feedings td,
-  .feedings th {
+  .finch-subsection-content table,
+  .finch-subsection-content td,
+  .finch-subsection-content th {
     font-size: 0.9rem;
   }
 
-  .feedings form {
+  .finch-subsection-content form {
     gap: 8px;
   }
+}
+
+
+/* تصميم مضغوط لعرض Feedings + Toys بجانب بعض */
+.finch-sections-wrapper.compact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+.finch-sections-wrapper.compact .finch-feedings,
+.finch-sections-wrapper.compact .finch-toys {
+  width: 48%;
+  padding: 15px;
 }
